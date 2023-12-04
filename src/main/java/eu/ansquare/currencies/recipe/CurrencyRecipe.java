@@ -5,20 +5,18 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
 import eu.ansquare.currencies.Currencies;
 import net.minecraft.inventory.CraftingInventory;
+import net.minecraft.inventory.RecipeInputInventory;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
-import net.minecraft.recipe.Ingredient;
-import net.minecraft.recipe.Recipe;
-import net.minecraft.recipe.RecipeSerializer;
-import net.minecraft.recipe.RecipeType;
+import net.minecraft.recipe.*;
 import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 
-public class CurrencyRecipe implements Recipe<SimpleInventory> {
+public class CurrencyRecipe implements CraftingRecipe {
 	protected final Ingredient inputA;
 	protected final Ingredient inputB;
 	protected final Ingredient inputC;
@@ -36,15 +34,16 @@ public class CurrencyRecipe implements Recipe<SimpleInventory> {
 		this.result = result;
 	}
 	@Override
-	public boolean matches(SimpleInventory inventory, World world) {
+	public boolean matches(RecipeInputInventory inventory, World world) {
 		if(inventory.size() < 4) return false;
 		return inputA.test(inventory.getStack(0)) && inputB.test(inventory.getStack(1)) && inputC.test(inventory.getStack(2)) && inputD.test(inventory.getStack(3));
 	}
 
 	@Override
-	public ItemStack craft(SimpleInventory inventory, DynamicRegistryManager registryManager) {
+	public ItemStack craft(RecipeInputInventory inventory, DynamicRegistryManager registryManager) {
 		return this.getResult(registryManager).copy();
 	}
+
 
 	@Override
 	public boolean fits(int width, int height) {
@@ -73,8 +72,14 @@ public class CurrencyRecipe implements Recipe<SimpleInventory> {
 	}
 	@Override
 	public RecipeType<?> getType() {
-		return Type.INSTANCE;
+		return Type.CRAFTING;
 	}
+
+	@Override
+	public CraftingCategory getCategory() {
+		return CraftingCategory.MISC;
+	}
+
 	class CurrencyRecipeJsonFormat {
 		JsonObject inputA;
 		JsonObject inputB;

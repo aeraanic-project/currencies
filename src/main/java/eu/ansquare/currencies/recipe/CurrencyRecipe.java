@@ -36,7 +36,9 @@ public class CurrencyRecipe implements CraftingRecipe {
 	@Override
 	public boolean matches(RecipeInputInventory inventory, World world) {
 		if(inventory.size() < 4) return false;
-		return inputA.test(inventory.getStack(0)) && inputB.test(inventory.getStack(1)) && inputC.test(inventory.getStack(2)) && inputD.test(inventory.getStack(3));
+		if(inventory instanceof MintingInventory){
+			return inputA.test(inventory.getStack(0)) && inputB.test(inventory.getStack(1)) && inputC.test(inventory.getStack(2)) && inputD.test(inventory.getStack(3));
+		} return false;
 	}
 
 	@Override
@@ -65,14 +67,9 @@ public class CurrencyRecipe implements CraftingRecipe {
 		return CurrencyRecipeSerializer.INSTANCE;
 	}
 
-	public static class Type implements RecipeType<CurrencyRecipe> {
-		private Type() {}
-		public static final Type INSTANCE = new Type();
-		public static final String ID = "currency_recipe";
-	}
 	@Override
 	public RecipeType<?> getType() {
-		return Type.CRAFTING;
+		return RecipeType.CRAFTING;
 	}
 
 	@Override

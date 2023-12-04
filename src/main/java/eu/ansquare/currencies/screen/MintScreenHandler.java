@@ -2,6 +2,7 @@ package eu.ansquare.currencies.screen;
 
 import eu.ansquare.currencies.Currencies;
 import eu.ansquare.currencies.recipe.CurrencyRecipe;
+import eu.ansquare.currencies.recipe.MintingInventory;
 import net.minecraft.SharedConstants;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -40,7 +41,7 @@ public class MintScreenHandler extends AbstractRecipeScreenHandler<RecipeInputIn
 	public MintScreenHandler(int id, PlayerInventory inv, ScreenHandlerContext context) {
 		super(Currencies.MINT_SCREEN_HANDLER, id);
 		name = "E";
-		this.inputInventory = new CraftingInventory(this, 2, 2);
+		this.inputInventory = new MintingInventory(this, 2, 2);
 		this.resultInventory = new CraftingResultInventory();
 		this.playerInv = inv;
 		this.context = context;
@@ -72,6 +73,7 @@ public class MintScreenHandler extends AbstractRecipeScreenHandler<RecipeInputIn
 			ItemStack itemStack = ItemStack.EMPTY;
 			Optional<CraftingRecipe> optional = world.getServer().getRecipeManager().getFirstMatch(RecipeType.CRAFTING, craftingInventory, world);
 			if (optional.isPresent()) {
+				if(optional.get() instanceof CurrencyRecipe){
 				ItemStack itemStack2 = optional.get().craft(craftingInventory, world.getRegistryManager());
 					if (itemStack2.isEnabled(world.getEnabledFlags())) {
 						itemStack = itemStack2;
@@ -83,7 +85,7 @@ public class MintScreenHandler extends AbstractRecipeScreenHandler<RecipeInputIn
 						}
 						itemStack.getOrCreateNbt().put("pos", NbtHelper.fromBlockPos(pos));
 					}
-							}
+							}}
 
 			resultInventory.setStack(0, itemStack);
 			handler.setPreviousTrackedSlot(0, itemStack);

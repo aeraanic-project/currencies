@@ -8,6 +8,7 @@ import eu.ansquare.currencies.recipe.CurrencyRecipeSerializer;
 import eu.ansquare.currencies.screen.MintScreenHandler;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerType;
 import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry;
+import net.minecraft.feature_flags.FeatureFlags;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.screen.ScreenHandler;
@@ -25,7 +26,7 @@ public class Currencies implements ModInitializer {
 	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LoggerFactory.getLogger("Currencies");
 	public static final String MODID = "currencies";
-	public static final ScreenHandlerType<MintScreenHandler> MINT_SCREEN_HANDLER = ScreenHandlerRegistry.registerSimple(id("mint_screen_handler"), MintScreenHandler::new);
+	public static ScreenHandlerType<MintScreenHandler> MINT_SCREEN_HANDLER;
 
 	public static Identifier id(String path){
 		return new Identifier(MODID, path);
@@ -34,6 +35,7 @@ public class Currencies implements ModInitializer {
 	@Override
 	public void onInitialize(ModContainer mod) {
 		LOGGER.info("Hello Quilt world from {}!", mod.metadata().name());
+		MINT_SCREEN_HANDLER = Registry.register(Registries.SCREEN_HANDLER_TYPE, id("mint_screen_handler"), new ScreenHandlerType(MintScreenHandler::new, FeatureFlags.DEFAULT_SET));
 		Registry.register(Registries.RECIPE_SERIALIZER, CurrencyRecipeSerializer.ID,
 				CurrencyRecipeSerializer.INSTANCE);
 		Registry.register(Registries.RECIPE_TYPE, id(CurrencyRecipe.Type.ID), CurrencyRecipe.Type.INSTANCE);

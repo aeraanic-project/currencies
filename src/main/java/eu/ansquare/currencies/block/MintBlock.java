@@ -33,6 +33,6 @@ public class MintBlock extends Block {
 
 	@Nullable
 	public NamedScreenHandlerFactory createScreenHandlerFactory(BlockState state, World world, BlockPos pos) {
-		return new SimpleNamedScreenHandlerFactory((syncId, inventory, player) -> new MintScreenHandler(syncId, inventory), Text.translatable("screen.currencies.mint.title"));
+		return new SimpleNamedScreenHandlerFactory((syncId, inventory, player) -> new MintScreenHandler(syncId, inventory, ScreenHandlerContext.create(world, pos)), Text.translatable("screen.currencies.mint.title"));
 	}
 }

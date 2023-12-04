@@ -8,10 +8,12 @@ import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
+import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 import org.quiltmc.qsl.item.setting.api.QuiltItemSettings;
 
 import java.util.LinkedHashMap;
@@ -22,7 +24,7 @@ public class ModBlocks {
 	private static final Map<Item, Identifier> BLOCKITEMS = new LinkedHashMap<>();
 	private static final Map<BlockEntityType, Identifier> BLOCKENTITIES = new LinkedHashMap<>();
 
-
+	public static final Block MINT = createBlockAndItem("block", new MintBlock(QuiltBlockSettings.create()), ItemGroups.FUNCTIONAL_BLOCKS);
 	private static <T extends Block> T createBlockAndItem(String name, T block, RegistryKey<ItemGroup> itemGroup){
 		BLOCKS.put(block, Currencies.id(name));
 		BLOCKITEMS.put(new BlockItem(block, new QuiltItemSettings()), Currencies.id(name));

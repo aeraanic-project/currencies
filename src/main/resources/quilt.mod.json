@@ -19,7 +19,8 @@
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
-			"init": "eu.ansquare.currencies.Currencies"
+			"init": "eu.ansquare.currencies.Currencies",
+			"client_init" : "eu.ansquare.currencies.CurrenciesClient"
 		},
 		"depends": [
 			{

@@ -1,6 +1,8 @@
 {
   "item.currencies.test_coin": "Test coin",
   "block.currencies.mint": "Mint",
+  "block.currencies.coin_scanner": "Coin scanner",
+  "message.coin_scanner.pos" : "Minted at %1$s %2$s %3$s",
   "screen.currencies.mint.title": "Mint",
 
   "itemgroup.currencies.currencies": "Currencies",

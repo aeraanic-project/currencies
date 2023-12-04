@@ -38,7 +38,6 @@ public class Currencies implements ModInitializer {
 		MINT_SCREEN_HANDLER = Registry.register(Registries.SCREEN_HANDLER_TYPE, id("mint_screen_handler"), new ScreenHandlerType(MintScreenHandler::new, FeatureFlags.DEFAULT_SET));
 		Registry.register(Registries.RECIPE_SERIALIZER, CurrencyRecipeSerializer.ID,
 				CurrencyRecipeSerializer.INSTANCE);
-		//Registry.register(Registries.RECIPE_TYPE, id(CurrencyRecipe.Type.ID), CurrencyRecipe.Type.INSTANCE);
 		ModItemGroups.init();
 		ModBlocks.init();
 		ModItems.init();

@@ -1,0 +1,47 @@
+{
+	"credit": "Made by Farpo with Blockbench",
+	"texture_size": [64, 64],
+	"textures": {
+		"0": "currencies:block/coin_scanner",
+		"particle": "currencies:block/coin_scanner"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 4, 16],
+			"faces": {
+				"north": {"uv": [4, 0, 8, 1], "texture": "#0"},
+				"east": {"uv": [4, 1, 8, 2], "texture": "#0"},
+				"south": {"uv": [4, 2, 8, 3], "texture": "#0"},
+				"west": {"uv": [4, 3, 8, 4], "texture": "#0"},
+				"up": {"uv": [4, 4, 0, 0], "texture": "#0"},
+				"down": {"uv": [4, 4, 0, 8], "texture": "#0"}
+			}
+		},
+		{
+			"from": [1, 4, 5.5],
+			"to": [15, 7, 7.5],
+			"faces": {
+				"north": {"uv": [4, 4, 7.5, 4.75], "texture": "#0"},
+				"east": {"uv": [7.5, 5, 8, 5.75], "texture": "#0"},
+				"south": {"uv": [4, 4.75, 7.5, 5.5], "texture": "#0"},
+				"west": {"uv": [7.5, 5.75, 8, 6.5], "texture": "#0"},
+				"up": {"uv": [7.5, 7.5, 4, 7], "texture": "#0"},
+				"down": {"uv": [7.5, 7.5, 4, 8], "texture": "#0"}
+			}
+		},
+		{
+			"from": [1, 4, 8.5],
+			"to": [15, 7, 10.5],
+			"faces": {
+				"north": {"uv": [4, 5.5, 7.5, 6.25], "texture": "#0"},
+				"east": {"uv": [7.5, 6.5, 8, 7.25], "texture": "#0"},
+				"south": {"uv": [4, 6.25, 7.5, 7], "texture": "#0"},
+				"west": {"uv": [7.5, 7.25, 8, 8], "texture": "#0"},
+				"up": {"uv": [11, 4.5, 7.5, 4], "texture": "#0"},
+				"down": {"uv": [11, 4.5, 7.5, 5], "texture": "#0"}
+			}
+		}
+	],
+	"display": {}
+}

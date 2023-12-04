@@ -7,10 +7,10 @@
     "item": "minecraft:emerald"
   },
   "inputC" : {
-    "item": "minecraft:diamond"
+    "item": "minecraft:emerald"
   },
   "inputD": {
-    "item": "minecraft:emerald"
+    "item": "minecraft:diamond"
   },
   "outputItem": "currencies:test_coin",
   "outputAmount": "1"

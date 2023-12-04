@@ -7,6 +7,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.*;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NbtHelper;
 import net.minecraft.network.packet.s2c.play.ScreenHandlerSlotUpdateS2CPacket;
 import net.minecraft.recipe.CraftingRecipe;
 import net.minecraft.recipe.Recipe;
@@ -20,6 +21,7 @@ import net.minecraft.screen.slot.Slot;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.Util;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
@@ -42,6 +44,7 @@ public class MintScreenHandler extends AbstractRecipeScreenHandler<RecipeInputIn
 		this.resultInventory = new CraftingResultInventory();
 		this.playerInv = inv;
 		this.context = context;
+
 		this.player = playerInv.player;
 		this.addSlot(new CraftingResultSlot(player, this.inputInventory, this.resultInventory, 0, 134, 44));
 
@@ -63,7 +66,7 @@ public class MintScreenHandler extends AbstractRecipeScreenHandler<RecipeInputIn
 			this.addSlot(new Slot(playerInv, i, 8 + i * 18, 142));
 		}
 	}
-	protected static void updateResult(MintScreenHandler handler, World world, PlayerEntity player, CraftingInventory craftingInventory, CraftingResultInventory resultInventory) {
+	protected static void updateResult(BlockPos pos, MintScreenHandler handler, World world, PlayerEntity player, CraftingInventory craftingInventory, CraftingResultInventory resultInventory) {
 		if (!world.isClient) {
 			ServerPlayerEntity serverPlayerEntity = (ServerPlayerEntity)player;
 			ItemStack itemStack = ItemStack.EMPTY;
@@ -78,6 +81,7 @@ public class MintScreenHandler extends AbstractRecipeScreenHandler<RecipeInputIn
 								itemStack.setCustomName(Text.literal(handler.name));
 							}
 						}
+						itemStack.getOrCreateNbt().put("pos", NbtHelper.fromBlockPos(pos));
 					}
 							}
 
@@ -94,7 +98,7 @@ public class MintScreenHandler extends AbstractRecipeScreenHandler<RecipeInputIn
 	}
 	public void onContentChanged(Inventory inventory) {
 		this.context.run((world, pos) -> {
-			updateResult(this, world, this.player, this.inputInventory, this.resultInventory);
+			updateResult(pos, this, world, this.player, this.inputInventory, this.resultInventory);
 		});
 	}
 	public ItemStack quickTransfer(PlayerEntity player, int fromIndex) {

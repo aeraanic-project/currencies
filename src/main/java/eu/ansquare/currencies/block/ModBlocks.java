@@ -3,6 +3,7 @@ package eu.ansquare.currencies.block;
 import eu.ansquare.currencies.Currencies;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.item.BlockItem;
@@ -25,6 +26,7 @@ public class ModBlocks {
 	private static final Map<BlockEntityType, Identifier> BLOCKENTITIES = new LinkedHashMap<>();
 
 	public static final Block MINT = createBlockAndItem("mint", new MintBlock(QuiltBlockSettings.create()), ItemGroups.FUNCTIONAL_BLOCKS);
+	public static final Block COIN_SCANNER = createBlockAndItem("coin_scanner", new CoinScannerBlock(QuiltBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()), ItemGroups.FUNCTIONAL_BLOCKS);
 	private static <T extends Block> T createBlockAndItem(String name, T block, RegistryKey<ItemGroup> itemGroup){
 		BLOCKS.put(block, Currencies.id(name));
 		BLOCKITEMS.put(new BlockItem(block, new QuiltItemSettings()), Currencies.id(name));

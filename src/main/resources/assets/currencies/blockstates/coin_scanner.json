@@ -1,0 +1,61 @@
+{
+  "variants": {
+    "face=ceiling,facing=east": {
+      "model": "currencies:block/coin_scanner",
+      "x": 180,
+      "y": 270
+    },
+    "face=ceiling,facing=north": {
+      "model": "currencies:block/coin_scanner",
+      "x": 180,
+      "y": 180
+    },
+    "face=ceiling,facing=south": {
+      "model": "currencies:block/coin_scanner",
+      "x": 180
+    },
+    "face=ceiling,facing=west": {
+      "model": "currencies:block/coin_scanner",
+      "x": 180,
+      "y": 90
+    },
+    "face=floor,facing=east": {
+      "model": "currencies:block/coin_scanner",
+      "y": 90
+    },
+    "face=floor,facing=north": {
+      "model": "currencies:block/coin_scanner"
+    },
+    "face=floor,facing=south": {
+      "model": "currencies:block/coin_scanner",
+      "y": 180
+    },
+    "face=floor,facing=west": {
+      "model": "currencies:block/coin_scanner",
+      "y": 270
+    },
+    "face=wall,facing=east": {
+      "model": "currencies:block/coin_scanner",
+      "uvlock": false,
+      "x": 90,
+      "y": 90
+    },
+    "face=wall,facing=north": {
+      "model": "currencies:block/coin_scanner",
+      "uvlock": false,
+      "x": 90
+    },
+    "face=wall,facing=south": {
+      "model": "currencies:block/coin_scanner",
+      "uvlock": false,
+      "x": 90,
+      "y": 180
+    },
+    "face=wall,facing=west": {
+      "model": "currencies:block/coin_scanner",
+      "uvlock": false,
+      "x": 90,
+      "y": 270
+    }
+  }
+}

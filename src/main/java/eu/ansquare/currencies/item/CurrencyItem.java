@@ -1,20 +1,16 @@
 package eu.ansquare.currencies.item;
 
-import eu.ansquare.currencies.recipe.CurrencyRecipe;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
-import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+import oshi.util.Util;
 
 import java.util.List;
-import java.util.Optional;
 
 public class CurrencyItem extends Item {
 	public CurrencyItem(Settings settings) {
@@ -26,6 +22,10 @@ public class CurrencyItem extends Item {
 	@Override
 	public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
 		String player = stack.getOrCreateNbt().getString("player");
-		tooltip.add(Text.translatable("item.currency.tooltip.player", player).formatted( Formatting.GRAY));
+		if(!Util.isBlank(player)){
+			tooltip.add(Text.translatable("item.currency.tooltip.player", player).formatted( Formatting.GRAY));
+		} else {
+			tooltip.add(Text.translatable("item.currency.tooltip.empty").formatted( Formatting.GRAY));
+		}
 	}
 }

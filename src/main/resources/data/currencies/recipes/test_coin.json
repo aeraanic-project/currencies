@@ -1,17 +1,17 @@
 {
   "type" : "currencies:currency_recipe",
   "inputA" : {
-    "item": "minecraft:redstone"
+    "item": "minecraft:diamond"
   },
   "inputB": {
-    "tag": "minecraft:logs"
+    "item": "minecraft:emerald"
   },
   "inputC" : {
     "item": "minecraft:diamond"
   },
   "inputD": {
-    "item": "minecraft:iron_ingot"
+    "item": "minecraft:emerald"
   },
-  "outputItem": "minecraft:cobblestone",
-  "outputAmount": "20"
+  "outputItem": "currencies:test_coin",
+  "outputAmount": "1"
 }

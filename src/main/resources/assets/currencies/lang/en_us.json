@@ -1,5 +1,8 @@
 {
   "item.currencies.test_coin": "Test coin",
+  "block.currencies.mint": "Mint",
+  "screen.currencies.mint.title": "Mint",
+
   "itemgroup.currencies.currencies": "Currencies",
   "item.currency.tooltip.player" : "Minted by %1$s"
 }

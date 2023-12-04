@@ -2,6 +2,7 @@ package eu.ansquare.currencies.screen;
 
 import eu.ansquare.currencies.Currencies;
 import eu.ansquare.currencies.recipe.CurrencyRecipe;
+import net.minecraft.SharedConstants;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.*;
@@ -18,6 +19,7 @@ import net.minecraft.screen.slot.ItemCombinationSlotManager;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
+import net.minecraft.util.Util;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
@@ -25,6 +27,7 @@ import java.util.Optional;
 
 public class MintScreenHandler extends AbstractRecipeScreenHandler<RecipeInputInventory> {
 	CraftingInventory inputInventory;
+	public String name;
 	CraftingResultInventory resultInventory;
 	PlayerInventory playerInv;
 	ScreenHandlerContext context;
@@ -34,18 +37,19 @@ public class MintScreenHandler extends AbstractRecipeScreenHandler<RecipeInputIn
 	}
 	public MintScreenHandler(int id, PlayerInventory inv, ScreenHandlerContext context) {
 		super(Currencies.MINT_SCREEN_HANDLER, id);
+		name = "E";
 		this.inputInventory = new CraftingInventory(this, 2, 2);
 		this.resultInventory = new CraftingResultInventory();
 		this.playerInv = inv;
 		this.context = context;
 		this.player = playerInv.player;
-		this.addSlot(new CraftingResultSlot(player, this.inputInventory, this.resultInventory, 0, 134, 35));
+		this.addSlot(new CraftingResultSlot(player, this.inputInventory, this.resultInventory, 0, 134, 44));
 
 		int i;
 		int j;
 		for(i = 0; i < 2; ++i) {
 			for(j = 0; j < 2; ++j) {
-				this.addSlot(new Slot(this.inputInventory, j + i * 2, 26 + j * 18, 26 + i * 18));
+				this.addSlot(new Slot(this.inputInventory, j + i * 2, 26 + j * 18, 35 + i * 18));
 			}
 		}
 
@@ -59,7 +63,7 @@ public class MintScreenHandler extends AbstractRecipeScreenHandler<RecipeInputIn
 			this.addSlot(new Slot(playerInv, i, 8 + i * 18, 142));
 		}
 	}
-	protected static void updateResult(ScreenHandler handler, World world, PlayerEntity player, CraftingInventory craftingInventory, CraftingResultInventory resultInventory) {
+	protected static void updateResult(MintScreenHandler handler, World world, PlayerEntity player, CraftingInventory craftingInventory, CraftingResultInventory resultInventory) {
 		if (!world.isClient) {
 			ServerPlayerEntity serverPlayerEntity = (ServerPlayerEntity)player;
 			ItemStack itemStack = ItemStack.EMPTY;
@@ -68,6 +72,12 @@ public class MintScreenHandler extends AbstractRecipeScreenHandler<RecipeInputIn
 				ItemStack itemStack2 = optional.get().craft(craftingInventory, world.getRegistryManager());
 					if (itemStack2.isEnabled(world.getEnabledFlags())) {
 						itemStack = itemStack2;
+						if (handler.name != null && !Util.isBlank(handler.name)) {
+							if (!handler.name.equals(itemStack.getName().getString())) {
+
+								itemStack.setCustomName(Text.literal(handler.name));
+							}
+						}
 					}
 							}
 
@@ -134,7 +144,30 @@ public class MintScreenHandler extends AbstractRecipeScreenHandler<RecipeInputIn
 
 		return itemStack;
 	}
+	public boolean setNewItemName(String newItemName) {
+		String string = validateName(newItemName);
+		if (string != null && !string.equals(this.name)) {
+			this.name = string;
+			if (this.getSlot(0).hasStack()) {
+				ItemStack itemStack = this.getSlot(0).getStack();
+				if (Util.isBlank(string)) {
+					itemStack.removeCustomName();
+				} else {
+					itemStack.setCustomName(Text.literal(string));
+				}
+			}
 
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	@Nullable
+	private static String validateName(String itemName) {
+		String string = SharedConstants.stripInvalidCharacters(itemName);
+		return string.length() <= 50 ? string : null;
+	}
 	@Override
 	public boolean canUse(PlayerEntity player) {
 		return true;

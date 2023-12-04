@@ -1,0 +1,17 @@
+{
+  "type" : "currencies:currency_recipe",
+  "inputA" : {
+    "item": "minecraft:redstone"
+  },
+  "inputB": {
+    "tag": "minecraft:logs"
+  },
+  "inputC" : {
+    "item": "minecraft:diamond"
+  },
+  "inputD": {
+    "item": "minecraft:iron_ingot"
+  },
+  "outputItem": "minecraft:cobblestone",
+  "outputAmount": "20"
+}

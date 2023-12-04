@@ -1,0 +1,5 @@
+{
+  "item.currencies.test_coin": "Test coin",
+  "itemgroup.currencies.currencies": "Currencies",
+  "item.currency.tooltip.player" : "Minted by %1$s"
+}

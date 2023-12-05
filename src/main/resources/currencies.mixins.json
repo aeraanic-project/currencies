@@ -4,9 +4,7 @@
 	"package": "eu.ansquare.currencies.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-      "ServerPlayNetworkHandlerMixin"
-      ,"SlotMixin"
-    ],
+      "ServerPlayNetworkHandlerMixin"],
 	"client": [],
 	"injectors": {
 		"defaultRequire": 1

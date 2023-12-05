@@ -6,6 +6,7 @@ import eu.ansquare.currencies.item.ModItems;
 import eu.ansquare.currencies.recipe.CurrencyRecipe;
 import eu.ansquare.currencies.recipe.CurrencyRecipeSerializer;
 import eu.ansquare.currencies.screen.MintScreenHandler;
+import eu.ansquare.currencies.screen.WalletScreenHandler;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerType;
 import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry;
 import net.minecraft.feature_flags.FeatureFlags;
@@ -27,6 +28,8 @@ public class Currencies implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger("Currencies");
 	public static final String MODID = "currencies";
 	public static ScreenHandlerType<MintScreenHandler> MINT_SCREEN_HANDLER;
+	public static ScreenHandlerType<WalletScreenHandler> WALLET_SCREEN_HANDLER;
+
 
 	public static Identifier id(String path){
 		return new Identifier(MODID, path);
@@ -36,6 +39,8 @@ public class Currencies implements ModInitializer {
 	public void onInitialize(ModContainer mod) {
 		LOGGER.info("Hello Quilt world from {}!", mod.metadata().name());
 		MINT_SCREEN_HANDLER = Registry.register(Registries.SCREEN_HANDLER_TYPE, id("mint_screen_handler"), new ScreenHandlerType(MintScreenHandler::new, FeatureFlags.DEFAULT_SET));
+		WALLET_SCREEN_HANDLER = Registry.register(Registries.SCREEN_HANDLER_TYPE, id("wallet_screen_handler"), new ScreenHandlerType(WalletScreenHandler::new, FeatureFlags.DEFAULT_SET));
+
 		Registry.register(Registries.RECIPE_SERIALIZER, CurrencyRecipeSerializer.ID,
 				CurrencyRecipeSerializer.INSTANCE);
 		ModItemGroups.init();

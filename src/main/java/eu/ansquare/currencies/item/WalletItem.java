@@ -1,5 +1,6 @@
 package eu.ansquare.currencies.item;
 
+import eu.ansquare.currencies.screen.WalletScreenHandler;
 import eu.ansquare.currencies.util.ItemUtils;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventories;
@@ -28,7 +29,7 @@ public class WalletItem extends Item {
 			user.openHandledScreen(new SimpleNamedScreenHandlerFactory((syncId, playerInventory, playerx) -> {
 				Inventory inventory = new WalletInventory(stack);
 
-				GenericContainerScreenHandler handler = GenericContainerScreenHandler.createGeneric9x6(syncId, playerInventory, inventory);
+				WalletScreenHandler handler = new WalletScreenHandler(syncId, playerInventory, inventory, 6);
 
 				return handler;
 			}, stack.getName()));

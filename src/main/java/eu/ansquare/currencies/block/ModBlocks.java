@@ -25,8 +25,8 @@ public class ModBlocks {
 	private static final Map<Item, Identifier> BLOCKITEMS = new LinkedHashMap<>();
 	private static final Map<BlockEntityType, Identifier> BLOCKENTITIES = new LinkedHashMap<>();
 
-	public static final Block MINT = createBlockAndItem("mint", new MintBlock(QuiltBlockSettings.create()), ItemGroups.FUNCTIONAL_BLOCKS);
-	public static final Block COIN_SCANNER = createBlockAndItem("coin_scanner", new CoinScannerBlock(QuiltBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()), ItemGroups.FUNCTIONAL_BLOCKS);
+	public static final Block MINT = createBlockAndItem("mint", new MintBlock(QuiltBlockSettings.copyOf(Blocks.IRON_BLOCK).requiresTool()), ItemGroups.FUNCTIONAL_BLOCKS);
+	public static final Block COIN_SCANNER = createBlockAndItem("coin_scanner", new CoinScannerBlock(QuiltBlockSettings.copyOf(Blocks.IRON_BLOCK).requiresTool().nonOpaque()), ItemGroups.FUNCTIONAL_BLOCKS);
 	private static <T extends Block> T createBlockAndItem(String name, T block, RegistryKey<ItemGroup> itemGroup){
 		BLOCKS.put(block, Currencies.id(name));
 		BLOCKITEMS.put(new BlockItem(block, new QuiltItemSettings()), Currencies.id(name));

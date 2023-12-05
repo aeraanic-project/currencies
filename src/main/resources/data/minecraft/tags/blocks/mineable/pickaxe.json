@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "currencies:mint",
+    "currencies:coin_scanner"
+  ]
+}

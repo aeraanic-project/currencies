@@ -1,11 +1,13 @@
 {
   "item.currencies.test_coin": "Test coin",
+  "item.currencies.leather_wallet": "Leather wallet",
   "block.currencies.mint": "Mint",
   "block.currencies.coin_scanner": "Coin scanner",
   "message.coin_scanner.pos" : "Minted at %1$s %2$s %3$s",
   "screen.currencies.mint.title": "Mint",
   "message.coin_scanner.name" : "Name: %1$s",
   "itemgroup.currencies.currencies": "Currencies",
+  "itemgroup.currencies.wallets": "Wallets",
   "item.currency.tooltip.player" : "Minted by %1$s",
   "item.currency.tooltip.empty" : "Not minted yet"
 

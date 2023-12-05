@@ -17,7 +17,7 @@ import java.util.Map;
 public class ModItems {
 	private static final Map<Item, Identifier> ITEMS = new LinkedHashMap<>();
 	public static final Item TEST_COIN = createItem("test_coin", new CurrencyItem(new QuiltItemSettings()), ModItemGroups.CURRENCIES);
-	public static final Item WALLET = createItem("wallet", new WalletItem(new QuiltItemSettings()), ItemGroups.TOOLS_AND_UTILITIES);
+	public static final Item LEATHER_WALLET = createItem("leather_wallet", new WalletItem(new QuiltItemSettings().maxCount(1)), ModItemGroups.WALLETS);
 	private static <T extends Item> T createItem(String name, T item, RegistryKey<ItemGroup> itemGroup){
 		ITEMS.put(item, Currencies.id(name));
 		ItemGroupEvents.modifyEntriesEvent(itemGroup).register(content -> {

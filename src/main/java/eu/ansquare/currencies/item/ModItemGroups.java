@@ -17,6 +17,7 @@ import java.util.Map;
 public class ModItemGroups {
 	private static Map<ItemGroup, RegistryKey<ItemGroup>> map = new HashMap<>();
 	public static final RegistryKey<ItemGroup> CURRENCIES = createRegistryKey("currencies");
+	public static final RegistryKey<ItemGroup> WALLETS = createRegistryKey("wallets");
 
 
 	private static RegistryKey<ItemGroup> createRegistryKey(String name) {
@@ -29,7 +30,7 @@ public class ModItemGroups {
 	}
 	public static void init(){
 		createGroup(CURRENCIES, "currencies", ModItems.TEST_COIN);
-
+		createGroup(WALLETS, "wallets", ModItems.LEATHER_WALLET);
 		map.keySet().forEach(itemGroup -> Registry.register(Registries.ITEM_GROUP, map.get(itemGroup), itemGroup));
 	}
 }

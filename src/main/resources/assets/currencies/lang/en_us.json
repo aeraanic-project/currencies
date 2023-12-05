@@ -25,6 +25,6 @@
   "itemgroup.currencies.currencies": "Currencies",
   "itemgroup.currencies.wallets": "Wallets",
   "item.currency.tooltip.player" : "Minted by %1$s",
-  "item.currency.tooltip.empty" : "Not minted yet"
-
+  "item.currency.tooltip.empty" : "Not minted yet",
+  "message.coin_scanner.wrong" : "This coin is not minted!"
 }

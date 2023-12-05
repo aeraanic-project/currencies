@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:leather"
+    },
+    "t": {
+      "item": "minecraft:gold_nugget"
+    }
+  },
+  "pattern": [
+    "#t#"
+  ],
+  "result": {
+    "count": 1,
+    "item": "currencies:leather_wallet"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:yellow_wool"
+    },
+    "t": {
+      "item": "minecraft:gold_nugget"
+    }
+  },
+  "pattern": [
+    "#t#"
+  ],
+  "result": {
+    "count": 2,
+    "item": "currencies:yellow_wool_wallet"
+  },
+  "show_notification": true
+}

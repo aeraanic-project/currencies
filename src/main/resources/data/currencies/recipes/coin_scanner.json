@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:iron_ingot"
+    },
+    "t": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    "#t#",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "item": "currencies:coin_scanner"
+  },
+  "show_notification": true
+}

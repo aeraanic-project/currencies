@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:iron_ingot"
+    },
+    "e": {
+      "item": "minecraft:gold_ingot"
+    },
+    "t" : {
+      "item": "minecraft:obsidian"
+    }
+  },
+  "pattern": [
+    "#e#",
+    "#t#",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "item": "currencies:mint"
+  },
+  "show_notification": true
+}

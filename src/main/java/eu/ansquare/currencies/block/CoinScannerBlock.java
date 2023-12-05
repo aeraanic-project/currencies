@@ -51,6 +51,8 @@ public class CoinScannerBlock extends WallMountedBlock {
 			player.sendMessage(Text.translatable("message.coin_scanner.name", stack.getName().getString()), false);
 			player.sendMessage(Text.translatable("item.currency.tooltip.player", player1), false);
 			player.sendMessage(Text.translatable("message.coin_scanner.pos", blockPos.getX(), blockPos.getY(), blockPos.getZ()), false);
+		} else {
+			player.sendMessage(Text.translatable("message.coin_scanner.wrong"), false);
 		}
 		return ActionResult.SUCCESS;
 		}

@@ -48,6 +48,7 @@ public class CoinScannerBlock extends WallMountedBlock {
 		String player1 = nbt.getString("player");
 		BlockPos blockPos = NbtHelper.toBlockPos(nbt.getCompound("pos"));
 		if(!Util.isBlank(player1) && blockPos != null){
+			player.sendMessage(Text.translatable("message.coin_scanner.name", stack.getName().getString()), false);
 			player.sendMessage(Text.translatable("item.currency.tooltip.player", player1), false);
 			player.sendMessage(Text.translatable("message.coin_scanner.pos", blockPos.getX(), blockPos.getY(), blockPos.getZ()), false);
 		}

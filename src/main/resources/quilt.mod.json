@@ -8,7 +8,9 @@
 			"name": "Currencies",
 			"description": "An item-based economy mod with unfalsifiable currencies.",
 			"contributors": {
-				"Farpo (SasaElele)": "Owner"
+				"Farpo (SasaElele)": "Owner, Author",
+				"ReadyRoad" : "Coin design",
+				"Fregatta" : "Coin design"
 			},
 			"contact": {
 				"homepage": "https://ansquare.eu/",

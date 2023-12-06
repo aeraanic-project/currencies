@@ -1,7 +1,9 @@
 {
   "item.currencies.diamond_coin": "Diamond coin",
   "item.currencies.copper_coin": "Copper coin",
+  "item.currencies.gold_coin": "Gold coin",
 
+  "item.currencies.emerald_coin": "Emerald coin",
   "item.currencies.leather_wallet": "Leather wallet",
   "item.currencies.red_wool_wallet": "Red wool wallet",
   "item.currencies.blue_wool_wallet": "Blue wool wallet",

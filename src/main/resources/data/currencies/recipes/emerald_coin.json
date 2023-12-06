@@ -1,0 +1,17 @@
+{
+  "type" : "currencies:currency_recipe",
+  "inputA" : {
+    "item": "minecraft:emerald"
+  },
+  "inputB": {
+    "item": "minecraft:emerald"
+  },
+  "inputC" : {
+    "item": "minecraft:emerald"
+  },
+  "inputD": {
+    "item": "minecraft:emerald"
+  },
+  "outputItem": "currencies:emerald_coin",
+  "outputAmount": "4"
+}

@@ -1,0 +1,17 @@
+{
+  "type" : "currencies:currency_recipe",
+  "inputA" : {
+    "item": "minecraft:gold_ingot"
+  },
+  "inputB": {
+    "item": "minecraft:gold_ingot"
+  },
+  "inputC" : {
+    "item": "minecraft:gold_ingot"
+  },
+  "inputD": {
+    "item": "minecraft:gold_ingot"
+  },
+  "outputItem": "currencies:gold_coin",
+  "outputAmount": "16"
+}

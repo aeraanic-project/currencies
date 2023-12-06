@@ -1,0 +1,17 @@
+{
+  "type" : "currencies:currency_recipe",
+  "inputA" : {
+    "item": "minecraft:cocoa_beans"
+  },
+  "inputB": {
+    "item": "minecraft:cocoa_beans"
+  },
+  "inputC" : {
+    "item": "minecraft:cocoa_beans"
+  },
+  "inputD": {
+    "item": "minecraft:sugar"
+  },
+  "outputItem": "currencies:chocolate_coin",
+  "outputAmount": "4"
+}

@@ -2,6 +2,7 @@ package eu.ansquare.currencies.item;
 
 import eu.ansquare.currencies.Currencies;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemGroups;
@@ -23,6 +24,7 @@ public class ModItems {
 	public static final Item GREEN_CASH = createItem("green_cash", new CurrencyItem(new QuiltItemSettings()), ModItemGroups.CURRENCIES);
 	public static final Item BLUE_CASH = createItem("blue_cash", new CurrencyItem(new QuiltItemSettings()), ModItemGroups.CURRENCIES);
 	public static final Item MAGENTA_CASH = createItem("magenta_cash", new CurrencyItem(new QuiltItemSettings()), ModItemGroups.CURRENCIES);
+	public static final Item CHOCOLATE_COIN = createItem("chocolate_coin", new CurrencyItem(new QuiltItemSettings().food(new FoodComponent.Builder().hunger(4).build())), ModItemGroups.CURRENCIES);
 
 	public static final Item LEATHER_WALLET = createItem("leather_wallet", new WalletItem(new QuiltItemSettings().maxCount(1)), ModItemGroups.WALLETS);
 	public static final Item BLUE_WALLET = createItem("blue_wool_wallet", new WalletItem(new QuiltItemSettings().maxCount(1)), ModItemGroups.WALLETS);

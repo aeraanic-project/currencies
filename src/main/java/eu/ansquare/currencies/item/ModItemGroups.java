@@ -29,7 +29,7 @@ public class ModItemGroups {
 		return group;
 	}
 	public static void init(){
-		createGroup(CURRENCIES, "currencies", ModItems.TEST_COIN);
+		createGroup(CURRENCIES, "currencies", ModItems.DIAMOND_COIN);
 		createGroup(WALLETS, "wallets", ModItems.LEATHER_WALLET);
 		map.keySet().forEach(itemGroup -> Registry.register(Registries.ITEM_GROUP, map.get(itemGroup), itemGroup));
 	}

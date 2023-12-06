@@ -1,5 +1,7 @@
 {
-  "item.currencies.test_coin": "Test coin",
+  "item.currencies.diamond_coin": "Diamond coin",
+  "item.currencies.copper_coin": "Copper coin",
+
   "item.currencies.leather_wallet": "Leather wallet",
   "item.currencies.red_wool_wallet": "Red wool wallet",
   "item.currencies.blue_wool_wallet": "Blue wool wallet",

@@ -1,0 +1,17 @@
+{
+  "type" : "currencies:currency_recipe",
+  "inputA" : {
+    "item": "minecraft:copper_ingot"
+  },
+  "inputB": {
+    "item": "minecraft:copper_ingot"
+  },
+  "inputC" : {
+    "item": "minecraft:copper_ingot"
+  },
+  "inputD": {
+    "item": "minecraft:copper_ingot"
+  },
+  "outputItem": "currencies:copper_coin",
+  "outputAmount": "16"
+}

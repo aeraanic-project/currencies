@@ -4,14 +4,14 @@
     "item": "minecraft:diamond"
   },
   "inputB": {
-    "item": "minecraft:emerald"
+    "item": "minecraft:diamond"
   },
   "inputC" : {
-    "item": "minecraft:emerald"
+    "item": "minecraft:diamond"
   },
   "inputD": {
     "item": "minecraft:diamond"
   },
-  "outputItem": "currencies:test_coin",
-  "outputAmount": "1"
+  "outputItem": "currencies:diamond_coin",
+  "outputAmount": "4"
 }

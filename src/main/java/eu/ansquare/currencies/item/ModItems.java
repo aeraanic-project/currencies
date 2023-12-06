@@ -16,7 +16,10 @@ import java.util.Map;
 
 public class ModItems {
 	private static final Map<Item, Identifier> ITEMS = new LinkedHashMap<>();
-	public static final Item TEST_COIN = createItem("test_coin", new CurrencyItem(new QuiltItemSettings()), ModItemGroups.CURRENCIES);
+	public static final Item DIAMOND_COIN = createItem("diamond_coin", new CurrencyItem(new QuiltItemSettings()), ModItemGroups.CURRENCIES);
+	public static final Item COPPER_COIN = createItem("copper_coin", new CurrencyItem(new QuiltItemSettings()), ModItemGroups.CURRENCIES);
+
+
 	public static final Item LEATHER_WALLET = createItem("leather_wallet", new WalletItem(new QuiltItemSettings().maxCount(1)), ModItemGroups.WALLETS);
 	public static final Item BLUE_WALLET = createItem("blue_wool_wallet", new WalletItem(new QuiltItemSettings().maxCount(1)), ModItemGroups.WALLETS);
 	public static final Item RED_WALLET = createItem("red_wool_wallet", new WalletItem(new QuiltItemSettings().maxCount(1)), ModItemGroups.WALLETS);

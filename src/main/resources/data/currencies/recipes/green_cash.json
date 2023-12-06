@@ -1,0 +1,17 @@
+{
+  "type" : "currencies:currency_recipe",
+  "inputA" : {
+    "item": "minecraft:paper"
+  },
+  "inputB": {
+    "item": "minecraft:paper"
+  },
+  "inputC" : {
+    "item": "minecraft:paper"
+  },
+  "inputD": {
+    "item": "minecraft:green_dye"
+  },
+  "outputItem": "currencies:green_cash",
+  "outputAmount": "6"
+}

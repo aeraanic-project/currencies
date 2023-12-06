@@ -20,6 +20,10 @@ public class ModItems {
 	public static final Item COPPER_COIN = createItem("copper_coin", new CurrencyItem(new QuiltItemSettings()), ModItemGroups.CURRENCIES);
 	public static final Item EMERALD_COIN = createItem("emerald_coin", new CurrencyItem(new QuiltItemSettings()), ModItemGroups.CURRENCIES);
 	public static final Item GOLD_COIN = createItem("gold_coin", new CurrencyItem(new QuiltItemSettings()), ModItemGroups.CURRENCIES);
+	public static final Item GREEN_CASH = createItem("green_cash", new CurrencyItem(new QuiltItemSettings()), ModItemGroups.CURRENCIES);
+	public static final Item BLUE_CASH = createItem("blue_cash", new CurrencyItem(new QuiltItemSettings()), ModItemGroups.CURRENCIES);
+	public static final Item MAGENTA_CASH = createItem("magenta_cash", new CurrencyItem(new QuiltItemSettings()), ModItemGroups.CURRENCIES);
+
 	public static final Item LEATHER_WALLET = createItem("leather_wallet", new WalletItem(new QuiltItemSettings().maxCount(1)), ModItemGroups.WALLETS);
 	public static final Item BLUE_WALLET = createItem("blue_wool_wallet", new WalletItem(new QuiltItemSettings().maxCount(1)), ModItemGroups.WALLETS);
 	public static final Item RED_WALLET = createItem("red_wool_wallet", new WalletItem(new QuiltItemSettings().maxCount(1)), ModItemGroups.WALLETS);
